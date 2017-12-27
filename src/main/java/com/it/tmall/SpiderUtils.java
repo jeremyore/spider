@@ -3,6 +3,7 @@ package com.it.tmall;
 import com.it.utils.DownImgUtils;
 import com.it.utils.ProxyUtils;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -10,7 +11,9 @@ import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,7 +33,7 @@ public class SpiderUtils {
 
     //=============================================================
     //爬取详情页
-    public static void getPageDetail(String url, String path) {
+    public static void saveDetailItems(String url, String path) {
         try {
 
             Document curDoc = Jsoup.connect(url)
@@ -42,7 +45,10 @@ public class SpiderUtils {
             String filePath = path + itemName + "/参数.txt";
 
             List<String> itemNameList = new ArrayList<>();
-            itemNameList.add("商品名称");
+            itemNameList.add("商品链接:");
+            itemNameList.add(url);
+            itemNameList.add("======================================");
+            itemNameList.add("商品名称:");
             itemNameList.add(itemName);
             itemNameList.add("======================================");
             FileUtils.writeLines(new File(filePath), "UTF-8", itemNameList, true);
@@ -62,7 +68,7 @@ public class SpiderUtils {
             List<String> descImgsUrl = getDescImgsURL(curDoc);
             DownImgUtils.saveImgList(descImgsUrl, path + itemName, "desc");
         } catch (Exception e) {
-            System.out.println("getPageDetail错误:" + e.getMessage());
+            System.out.println("saveDetailItems错误:" + e.getMessage());
         }
     }
 
@@ -73,7 +79,7 @@ public class SpiderUtils {
 
     public static List<String> getColors(Document curDoc) {
         List<String> colorList = new ArrayList<>();
-        colorList.add("颜色种类");
+        colorList.add("颜色种类:");
         Elements colorEles = curDoc.select("#J_DetailMeta > div.tm-clear > div.tb-property > div > div.tb-key > div > div > dl.tb-prop.tm-sale-prop.tm-clear.tm-img-prop > dd > ul > li");
         for (Element element : colorEles) {
             colorList.add(element.attr("title"));
@@ -95,7 +101,7 @@ public class SpiderUtils {
 
     public static List<String> getProductPara(Document curDoc) {
         List<String> productParaList = new ArrayList<>();
-        productParaList.add("详细参数");
+        productParaList.add("详细参数:");
         Elements productParaEles = curDoc.select("#J_AttrUL > li");
         for (Element element : productParaEles) {
             productParaList.add(element.text());
@@ -130,7 +136,7 @@ public class SpiderUtils {
                 }
 
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("getDescImgsURL错误:" + e.getMessage());
             }
         }
         return descImgsUrlList;
@@ -139,43 +145,43 @@ public class SpiderUtils {
 
     //==============================================================
     //分页爬取全店
-    public static void getAllPages(String url, String path,int pagesNum) {
+    //获取全店所有商品
+    public static Set<String> getAllPages(String url, int pagesNum) {
+        Set<String> itemUrlSet = new HashSet<>();
         try {
-/*
-            Document curDoc = Jsoup.connect(url+"/category.htm")
+            Document curDoc = Jsoup.connect(url + "/category.htm")
                     .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0")
                     .timeout(3000)
                     .get();
-
-            String descUrl=url+curDoc.select("#J_ShopAsynSearchURL").attr("value");
-
-            for (int i = 1; i <=pagesNum ; i++) {
-                String fullDescUrl=descUrl+"&pageNo="+i;
-                Document descDoc = Jsoup.connect("https://wfjn.tmall.com/i/asynSearch.htm?mid=w-14902631627-0&wid=14902631627&path=/category.htm&pageNo=1")
+            String descUrl = url + curDoc.select("#J_ShopAsynSearchURL").attr("value");
+            for (int i = 1; i <= pagesNum; i++) {
+                String fullDescUrl = descUrl + "&pageNo=" + i;
+                Document descDoc = Jsoup.connect(fullDescUrl)
                         .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0")
+                        .referrer("https://wfjn.tmall.com")
+                        .header("cookie", "t=81ed193a07d8f2690024bc4e7e54f5c8; _tb_token_=377353337be58; cookie2=1235cb19733c4d9e22d7237215919b68; cna=bXXKEpgDkE0CAXWYkgXNHo0j; isg=Au7uNQjOOJpzVkz-zvaLqpfBP0RwR7OMfNPATRi3WvGs-45VgH8C-ZRzx1Dt")
                         .timeout(3000)
                         .get();
 
-
-                Elements itemEles=descDoc.select("body > div > div.\\5c \\22 J_TItems\\5c \\22 > div");
-
-                for (Element element:itemEles) {
-                    System.out.println(element.text());
+                String descText = StringUtils.replaceChars(descDoc.toString(), "\\", "");
+                descText = StringUtils.removePattern(descText, "&quot;");
+                descDoc = Jsoup.parse(descText);
+                Elements itemEles = descDoc.select("div.J_TItems>div:lt(15) > dl > dt > a");
+                for (Element element : itemEles) {
+                    itemUrlSet.add("https:" + element.attr("href"));
                 }
-
-
-            }*/
-
-            Document descDoc = Jsoup.connect("https://wfjn.tmall.com/i/asynSearch.htm?mid=w-14902631627-0&wid=14902631627&path=/category.htm")
-                    .userAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36")
-                    .referrer("https://wfjn.tmall.com/category.htm")
-                    .timeout(3000)
-                    .get();
-
-            System.out.println(descDoc.outerHtml());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return itemUrlSet;
     }
 
+    public static void saveAllPagesItems(String url, String path, int pagesNum) {
+        Set<String> itemUrlSet = getAllPages(url, pagesNum);
+        for (String itemUrl : itemUrlSet) {
+            saveDetailItems(itemUrl, path);
+            System.out.println(itemUrl);
+        }
+    }
 }

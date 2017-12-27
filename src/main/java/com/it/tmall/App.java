@@ -10,8 +10,11 @@ public class App {
 //        SpiderUtils.getPageDetail(url, path);
 
 
-        String url = "https://wfjn.tmall.com";
-        String path = "/home/wangjing/Downloads/秋名山/汽车坐垫/五福金牛/";
-        SpiderUtils.getAllPages(url, path,2);
+//        String url = "https://wfjn.tmall.com";
+//        String path = "D:/秋名山/汽车坐垫/五福金牛/";
+        String url = "https://letbon.tmall.com/";
+        String path = "D:/秋名山/太阳膜/雷朋/";
+        int pagesNum = 1;
+        SpiderUtils.saveAllPagesItems(url, path, pagesNum);
     }
 }
