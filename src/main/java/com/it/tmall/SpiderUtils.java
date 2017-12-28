@@ -146,10 +146,10 @@ public class SpiderUtils {
     //==============================================================
     //分页爬取全店
     //获取全店所有商品
-    public static Set<String> getAllPages(String url, int pagesNum) {
+    public static Set<String> getAllPages(String url, int pagesNum,String catUrl) {
         Set<String> itemUrlSet = new HashSet<>();
         try {
-            Document curDoc = Jsoup.connect(url + "/category.htm")
+            Document curDoc = Jsoup.connect(url + catUrl)
                     .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0")
                     .timeout(3000)
                     .get();
@@ -177,8 +177,8 @@ public class SpiderUtils {
         return itemUrlSet;
     }
 
-    public static void saveAllPagesItems(String url, String path, int pagesNum) {
-        Set<String> itemUrlSet = getAllPages(url, pagesNum);
+    public static void saveAllPagesItems(String url, String path, int pagesNum,String catUrl) {
+        Set<String> itemUrlSet = getAllPages(url, pagesNum,catUrl);
         for (String itemUrl : itemUrlSet) {
             saveDetailItems(itemUrl, path);
             System.out.println(itemUrl);
