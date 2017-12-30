@@ -11,8 +11,8 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String url = "https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.686783dd3ogj1K&id=520034057009&skuId=3168677931941&areaId=420100&user_id=2414942299&cat_id=2&is_b=1&rn=5badaa6dfe6ffa774c6bfdc6a4a014e1";
-        String path = "/home/wangjing/Downloads/秋名山/音响导航/e车e拍/";
+        String url = "https://detail.tmall.com/item.htm?id=15548208885&rn=59ece18a6e39b7b30b55d14697d33a99&abbucket=15&skuId=3659141406714";
+        String path = "D:/商品数据/";
         SpiderUtils.saveDetailItems(url, path);
     }
 
@@ -29,8 +29,10 @@ public class App {
 
 //        arrayList.add(new String[]{"https://steelmate.tmall.com", "D:/秋名山/铁将军/", "1", "/category.htm"});
 
-        arrayList.add(new String[]{"https://meto.tmall.com", "D:/秋名山/美途/", "2", "/category.htm"});
+//        arrayList.add(new String[]{"https://meto.tmall.com", "D:/秋名山/美途/", "2", "/category.htm"});
 
+//        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/汽车坐垫/五福金牛/", "2","/category.htm"});
+                arrayList.add(new String[]{"https://steelmate.tmall.com", "D:/商品数据/铁将军/", "1", "/category.htm"});
 
         for (String[] strArr : arrayList) {
             SpiderUtils.saveAllPagesItems(strArr[0], strArr[1], Integer.parseInt(strArr[2]), strArr[3]);
