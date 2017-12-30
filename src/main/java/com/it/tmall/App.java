@@ -23,7 +23,13 @@ public class App {
 //        arrayList.add(new String[]{"https://tourmate.tmall.com", "/home/wangjing/Downloads/秋名山/音响导航/tourmate途美/", "1","/category.htm"});
 
 //        arrayList.add(new String[]{"https://jfhycp.tmall.com", "/home/wangjing/Downloads/秋名山/音响导航/易图/", "1", "/category-1313270140.htm"});
-        arrayList.add(new String[]{"https://3mcarcare.tmall.com", "/home/wangjing/Downloads/秋名山/3mcarcare/", "2", "/category.htm"});
+        // arrayList.add(new String[]{"https://3mcarcare.tmall.com", "/home/wangjing/Downloads/秋名山/3mcarcare/", "2", "/category.htm"});
+
+//        arrayList.add(new String[]{"https://llumar.tmall.com", "D:/秋名山/太阳膜/龙膜/", "1", "/category.htm"});
+
+//        arrayList.add(new String[]{"https://steelmate.tmall.com", "D:/秋名山/铁将军/", "1", "/category.htm"});
+
+        arrayList.add(new String[]{"https://meto.tmall.com", "D:/秋名山/美途/", "2", "/category.htm"});
 
 
         for (String[] strArr : arrayList) {
