@@ -5,14 +5,14 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-//        save_1_Item();
+        save_1_Item();
 
-        saveAllPagesItems();
+//        saveAllPagesItems();
     }
 
     public static void save_1_Item() {
-        String url = "https://detail.tmall.com/item.htm?id=15548208885&rn=59ece18a6e39b7b30b55d14697d33a99&abbucket=15&skuId=3659141406714";
-        String path = "D:/商品数据/";
+        String url = "https://detail.tmall.com/item.htm?spm=a230r.1.14.6.53ed63f1yzddKD&id=520034057009&cm_id=140105335569ed55e27b&abbucket=1&skuId=3168677931941";
+        String path = "/home/wangjing/Downloads/商品数据/taobao/";
         SpiderUtils.saveDetailItems(url, path);
     }
 
@@ -34,7 +34,9 @@ public class App {
 //        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/汽车坐垫/五福金牛/", "2","/category.htm"});
 //        arrayList.add(new String[]{"https://steelmate.tmall.com", "/home/wangjing/Downloads/商品数据/铁将军/", "1", "/category.htm"});
 
-        arrayList.add(new String[]{"https://hulianyidong.tmall.com", "/home/wangjing/Downloads/商品数据/音响导航/互联移动/", "1", "/category.htm"});
+//        arrayList.add(new String[]{"https://hulianyidong.tmall.com", "/home/wangjing/Downloads/商品数据/音响导航/互联移动/", "1", "/category.htm"});
+
+        arrayList.add(new String[]{"https://letbon.tmall.com", "/home/wangjing/Downloads/商品数据/雷朋/", "1", "/category.htm"});
 
 
         for (String[] strArr : arrayList) {
