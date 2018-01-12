@@ -123,7 +123,7 @@ public class SpiderUtils {
                 Matcher mImg = pImg.matcher(descImgDoc.outerHtml());
                 int imgIndex = 0;
                 while (mImg.find()) {
-                    if (mImg.group(1).endsWith("jpg")) {
+                    if (mImg.group(1).endsWith("jpg")||mImg.group(1).endsWith("png")) {
                         imgIndex += 1;
                         descImgsUrlList.add(mImg.group(1));
                     }
