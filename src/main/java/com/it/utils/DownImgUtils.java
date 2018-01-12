@@ -118,11 +118,13 @@ public class DownImgUtils {
         int index = 0;
         for (String imgUrl : imgsUrl) {
             index += 1;
-            saveImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            saveImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index)+ ".jpg");
             System.out.println(imgUrl);
         }
     }
 
+
+    //JD特殊处理====================================================================================
     //JD描述图片过大，不适合淘宝，对JD详情图片进行切图
     public static void saveJDDescImgList(List<String> imgsUrl, String path, String fileName) {
         int index = 0;
@@ -144,6 +146,25 @@ public class DownImgUtils {
                         .scale(1.0)
                         .toFile(path + "/" + fileName + "_" + new DecimalFormat("00").format(i) + ".jpg");
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void saveJDTitleImgList(List<String> imgsUrl, String path, String fileName) {
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveJDTitleImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            System.out.println(imgUrl);
+        }
+    }
+
+    public static void saveJDTitleImg(String imgUrl, String path, String fileName) {
+        try {
+            Thumbnails.of(new URL(imgUrl))
+                    .size(400,400)
+                    .toFile(path+"/"+fileName+".jpg");
         } catch (Exception e) {
             e.printStackTrace();
         }
