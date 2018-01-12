@@ -52,7 +52,7 @@ public class SpiderUtils {
             DownImgUtils.saveImgList(titleImgsUrl, path + itemName, "title");
 
             List<String> descImgsUrl = getDescImgsURL(curDoc);
-            DownImgUtils.saveImgList(descImgsUrl, path + itemName, "desc");
+            DownImgUtils.saveJDDescImgList(descImgsUrl, path + itemName, "desc");
         } catch (Exception e) {
             System.out.println("saveDetailItems错误:" + e.getMessage());
         }

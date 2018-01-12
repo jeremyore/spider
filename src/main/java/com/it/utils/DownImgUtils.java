@@ -1,11 +1,15 @@
 package com.it.utils;
 
 
+import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.io.IOUtils;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class DownImgUtils {
@@ -102,20 +106,46 @@ public class DownImgUtils {
     }
 
     public static void saveImg(String imgUrl, String path, String fileName) {
-        try{
+        try {
             byte[] imgBytes = download(imgUrl, 100_000);
             byte2File(imgBytes, path, fileName);
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static void saveImgList(List<String> imgsUrl, String path, String fileName) {
-        int index=0;
-        for (String imgUrl:imgsUrl) {
-            index+=1;
-            saveImg(imgUrl,path,fileName+"_"+index+".jpg");
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
             System.out.println(imgUrl);
+        }
+    }
+
+    //JD描述图片过大，不适合淘宝，对JD详情图片进行切图
+    public static void saveJDDescImgList(List<String> imgsUrl, String path, String fileName) {
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveJDImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            System.out.println(imgUrl);
+        }
+    }
+
+    public static void saveJDImg(String imgUrl, String path, String fileName) {
+        try {
+            BufferedImage sourceImg = ImageIO.read(new URL(imgUrl));
+            int imgWidth = sourceImg.getWidth();
+            int imgHeight = sourceImg.getHeight();
+            for (int i = 0; i < Math.ceil(imgHeight * 1.0 / 1920); i++) {
+                Thumbnails.of(sourceImg)
+                        .sourceRegion(0, i * 1920, imgWidth, 1920)
+                        .scale(1.0)
+                        .toFile(path + "/" + fileName + "_" + new DecimalFormat("00").format(i) + ".jpg");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

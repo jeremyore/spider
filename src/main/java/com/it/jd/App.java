@@ -6,12 +6,11 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         save_1_Item();
-
         //saveAllPagesItems();
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/商品数据/歌浪香品/";
+        String path = "/home/wangjing/Downloads/商品数据/歌浪香品1/";
 
         List<String> urlList = new ArrayList<>();
         urlList.add("https://item.jd.com/18897887801.html");
@@ -28,7 +27,6 @@ public class App {
 
         urlList.add("https://item.jd.com/18914363353.html");
         urlList.add("https://item.jd.com/18848075603.html");
-
 
 
         for (String url : urlList) {
