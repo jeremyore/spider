@@ -123,7 +123,6 @@ public class DownImgUtils {
         }
     }
 
-
     //JD特殊处理====================================================================================
     //JD描述图片过大，不适合淘宝，对JD详情图片进行切图
     public static void saveJDDescImgList(List<String> imgsUrl, String path, String fileName) {
@@ -167,6 +166,27 @@ public class DownImgUtils {
                     .toFile(path+"/"+fileName+".jpg");
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    //==================
+
+    public static void saveAuroraImg(String imgUrl, String path, String fileName) {
+        try {
+            Thumbnails.of(new URL(imgUrl))
+                    .width(1200)
+                    .toFile(path+"/"+fileName+".jpg");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void saveAuroraImgList(List<String> imgsUrl, String path, String fileName) {
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveAuroraImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            System.out.println(imgUrl);
         }
     }
 }

@@ -22,7 +22,7 @@ public class App {
     }
 
     public static void saveAllPagesItems() {
-        String path = "/home/wangjing/Downloads/商品数据/欧若拉1/";
+        String path = "/home/wangjing/Downloads/欧若拉/";
 
         List<String> urlList = new ArrayList<>();
         urlList.add("http://www.zg-aurora.com/products.php?cid=1");
