@@ -10,9 +10,7 @@ import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,7 +47,7 @@ public class SpiderUtils {
             System.out.println(paraList);
 
             List<String> titleImgsUrl = getTitleImgsURL(curDoc);
-            DownImgUtils.saveImgList(titleImgsUrl, path + itemName, "title");
+            DownImgUtils.saveJDTitleImgList(titleImgsUrl, path + itemName, "title");
 
             List<String> descImgsUrl = getDescImgsURL(curDoc);
             DownImgUtils.saveJDDescImgList(descImgsUrl, path + itemName, "desc");
@@ -144,7 +142,7 @@ public class SpiderUtils {
 
 
     //==============================================================
-    //分页爬取全店
+/*    //分页爬取全店
     //获取全店所有商品
     public static Set<String> getAllPages(String url, int pagesNum, String catUrl) {
         Set<String> itemUrlSet = new HashSet<>();
@@ -184,5 +182,5 @@ public class SpiderUtils {
             saveDetailItems(itemUrl, path);
             System.out.println(itemUrl);
         }
-    }
+    }*/
 }

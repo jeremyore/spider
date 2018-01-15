@@ -10,7 +10,7 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/商品数据/歌浪香品1/";
+        String path = "D:/歌浪香品2/";
 
         List<String> urlList = new ArrayList<>();
         urlList.add("https://item.jd.com/18897887801.html");
@@ -39,7 +39,7 @@ public class App {
         }
     }
 
-    public static void saveAllPagesItems() {
+/*    public static void saveAllPagesItems() {
         List<String[]> arrayList = new ArrayList<>();
         arrayList.add(new String[]{"https://mall.jd.com/view_search-813393-0-99-1-24-", "/home/wangjing/Downloads/商品数据/歌浪香品/", "1", ".html"});
 
@@ -48,5 +48,5 @@ public class App {
             SpiderUtils.saveAllPagesItems(strArr[0], strArr[1], Integer.parseInt(strArr[2]), strArr[3]);
 
         }
-    }
+    }*/
 }
