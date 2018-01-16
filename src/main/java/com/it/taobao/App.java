@@ -6,13 +6,13 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-//        save_1_Item();
-        saveAllPagesItems();
+        save_1_Item();
+//        saveAllPagesItems();
 
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/商品数据/taobao/";
+        String path = "/home/wangjing/Downloads/商品数据/歌浪/";
 
         List<String> urlList = new ArrayList<>();
 /*        urlList.add("https://item.taobao.com/item.htm?ft=t&spm=a21m2.8958473.0.0.a053ed6CBC8T3&id=543678690807");
@@ -40,7 +40,9 @@ public class App {
         //urlList.add("https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w5003-17763236976.1.4de1c8cbZVFRTf&id=563951482915&scene=taobao_shop");
         //urlList.add("https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-17762867540.44.7a971b36W3T7mW&id=564012050206");
 
-        urlList.add("https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-15406759097.6.47749a7dfWDhMA&id=538236401205");
+        //urlList.add("https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-15406759097.6.47749a7dfWDhMA&id=538236401205");
+
+        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.31.5e30deffUzLGmO&id=548248359515&ns=1&abbucket=1#detail");
 
         for (String url : urlList) {
             SpiderUtils.saveDetailItems(url, path);
