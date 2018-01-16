@@ -189,4 +189,31 @@ public class DownImgUtils {
             System.out.println(imgUrl);
         }
     }
+
+    //========================================================
+    //Tmall描述图片过大，不适合淘宝，对JD详情图片进行切图
+    public static void saveTmallDescImgList(List<String> imgsUrl, String path, String fileName) {
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveTmallImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            System.out.println(imgUrl);
+        }
+    }
+
+    public static void saveTmallImg(String imgUrl, String path, String fileName) {
+        try {
+            BufferedImage sourceImg = ImageIO.read(new URL(imgUrl));
+            int imgWidth = sourceImg.getWidth();
+            int imgHeight = sourceImg.getHeight();
+            for (int i = 0; i < Math.ceil(imgHeight * 1.0 / 1920); i++) {
+                Thumbnails.of(sourceImg)
+                        .sourceRegion(0, i * 1920, imgWidth, 1920)
+                        .width(790)
+                        .toFile(path + "/" + fileName + "_" + new DecimalFormat("00").format(i) + ".jpg");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -5,9 +5,9 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        save_1_Item();
+//        save_1_Item();
 
-//        saveAllPagesItems();
+        saveAllPagesItems();
     }
 
     public static void save_1_Item() {
@@ -36,7 +36,7 @@ public class App {
 
 //        arrayList.add(new String[]{"https://hulianyidong.tmall.com", "/home/wangjing/Downloads/商品数据/音响导航/互联移动/", "1", "/category.htm"});
 
-        arrayList.add(new String[]{"https://letbon.tmall.com", "/home/wangjing/Downloads/商品数据/雷朋/", "1", "/category.htm"});
+        arrayList.add(new String[]{"https://letbon.tmall.com", "D:/商品数据/雷朋2/", "1", "/category.htm"});
 
 
         for (String[] strArr : arrayList) {
