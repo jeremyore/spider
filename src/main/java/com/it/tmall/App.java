@@ -5,14 +5,14 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-//        save_1_Item();
+        save_1_Item();
 
-        saveAllPagesItems();
+//        saveAllPagesItems();
     }
 
     public static void save_1_Item() {
-        String url = "https://detail.tmall.com/item.htm?spm=a230r.1.14.6.53ed63f1yzddKD&id=520034057009&cm_id=140105335569ed55e27b&abbucket=1&skuId=3168677931941";
-        String path = "/home/wangjing/Downloads/商品数据/taobao/";
+        String url = "https://detail.tmall.com/item.htm?spm=a1z10.5-b-s.w4011-14902631627.83.34ff5f927lMLwn&id=539334270130&rn=51af32c6a265ea90dfb690e4811363e6&abbucket=7&skuId=3231368168293";
+        String path = "D:\\商品数据\\五福金牛\\坐垫\\";
         SpiderUtils.saveDetailItems(url, path);
     }
 
@@ -36,9 +36,9 @@ public class App {
 
 //        arrayList.add(new String[]{"https://hulianyidong.tmall.com", "/home/wangjing/Downloads/商品数据/音响导航/互联移动/", "1", "/category.htm"});
 
-        arrayList.add(new String[]{"https://wfjn.tmall.com", "/home/wangjing/Downloads/商品数据/五福金牛/脚垫/", "1", "/category-804274908.htm"});
-        arrayList.add(new String[]{"https://wfjn.tmall.com", "/home/wangjing/Downloads/商品数据/五福金牛/坐垫/", "1", "/category-804275980.htm"});
-        arrayList.add(new String[]{"https://wfjn.tmall.com", "/home/wangjing/Downloads/商品数据/五福金牛/尾箱垫/", "1", "/category-804275982.htm"});
+//        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/五福金牛/脚垫/", "1", "/category-804274908.htm"});
+        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/五福金牛/坐垫/", "1", "/category-804275980.htm"});
+//        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/五福金牛/尾箱垫/", "1", "/category-804275982.htm"});
 
 
         for (String[] strArr : arrayList) {

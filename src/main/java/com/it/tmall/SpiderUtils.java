@@ -82,7 +82,7 @@ public class SpiderUtils {
         colorList.add("颜色种类:");
         Elements colorEles = curDoc.select("#J_DetailMeta > div.tm-clear > div.tb-property > div > div.tb-key > div > div > dl.tb-prop.tm-sale-prop.tm-clear.tm-img-prop > dd > ul > li");
         for (Element element : colorEles) {
-            String colorName = element.attr("title");
+            String colorName = element.attr("title").replace("/","");
             colorList.add(colorName);
             //颜色对应图片下载
             String backgroundUrl = element.child(0).attr("style");

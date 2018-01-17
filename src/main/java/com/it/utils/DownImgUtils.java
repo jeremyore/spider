@@ -209,7 +209,7 @@ public class DownImgUtils {
             for (int i = 0; i < Math.ceil(imgHeight * 1.0 / 1920); i++) {
                 Thumbnails.of(sourceImg)
                         .sourceRegion(0, i * 1920, imgWidth, 1920)
-                        .width(790)
+                        .width(750)
                         .toFile(path + "/" + fileName + "_" + new DecimalFormat("00").format(i) + ".jpg");
             }
         } catch (Exception e) {
