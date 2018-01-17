@@ -36,7 +36,9 @@ public class App {
 
 //        arrayList.add(new String[]{"https://hulianyidong.tmall.com", "/home/wangjing/Downloads/商品数据/音响导航/互联移动/", "1", "/category.htm"});
 
-        arrayList.add(new String[]{"https://letbon.tmall.com", "D:/商品数据/雷朋2/", "1", "/category.htm"});
+        arrayList.add(new String[]{"https://wfjn.tmall.com", "/home/wangjing/Downloads/商品数据/五福金牛/脚垫/", "1", "/category-804274908.htm"});
+        arrayList.add(new String[]{"https://wfjn.tmall.com", "/home/wangjing/Downloads/商品数据/五福金牛/坐垫/", "1", "/category-804275980.htm"});
+        arrayList.add(new String[]{"https://wfjn.tmall.com", "/home/wangjing/Downloads/商品数据/五福金牛/尾箱垫/", "1", "/category-804275982.htm"});
 
 
         for (String[] strArr : arrayList) {
