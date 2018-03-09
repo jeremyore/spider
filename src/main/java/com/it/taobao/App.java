@@ -12,7 +12,7 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/商品数据/歌浪/";
+        String path = "D:/商品数据/";
 
         List<String> urlList = new ArrayList<>();
 /*        urlList.add("https://item.taobao.com/item.htm?ft=t&spm=a21m2.8958473.0.0.a053ed6CBC8T3&id=543678690807");
@@ -42,7 +42,13 @@ public class App {
 
         //urlList.add("https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-15406759097.6.47749a7dfWDhMA&id=538236401205");
 
-        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.31.5e30deffUzLGmO&id=548248359515&ns=1&abbucket=1#detail");
+//        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.31.5e30deffUzLGmO&id=548248359515&ns=1&abbucket=1#detail");
+
+//        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.39.57514ffeapRKu1&id=564743981786&ns=1&abbucket=7#detail");
+
+//        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.1.65c637e4Pthh9I&id=556013106233&ns=1&abbucket=7#detail");
+
+        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.26.65c637e4Pthh9I&id=559923986106&ns=1&abbucket=7#detail");
 
         for (String url : urlList) {
             SpiderUtils.saveDetailItems(url, path);

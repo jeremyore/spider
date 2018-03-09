@@ -11,8 +11,8 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String url = "https://detail.tmall.com/item.htm?spm=a1z10.5-b-s.w4011-14902631627.83.34ff5f927lMLwn&id=539334270130&rn=51af32c6a265ea90dfb690e4811363e6&abbucket=7&skuId=3231368168293";
-        String path = "D:\\商品数据\\五福金牛\\坐垫\\";
+        String url = "https://detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-14944792624.50.4aa04024hpz2SP&id=26286604315&rn=c23a72982b0f553a3adaad817317f920&abbucket=14";
+        String path = "D:\\商品数据\\";
         SpiderUtils.saveDetailItems(url, path);
     }
 
