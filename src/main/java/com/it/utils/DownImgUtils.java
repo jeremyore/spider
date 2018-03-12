@@ -216,4 +216,31 @@ public class DownImgUtils {
             e.printStackTrace();
         }
     }
+
+    //========================================================
+    // taobao部分描述图片过大，对详情图片进行切图
+    public static void saveTaoBaoDescImgList(List<String> imgsUrl, String path, String fileName) {
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveTaoBaoImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            System.out.println(imgUrl);
+        }
+    }
+
+    public static void saveTaoBaoImg(String imgUrl, String path, String fileName) {
+        try {
+            BufferedImage sourceImg = ImageIO.read(new URL(imgUrl));
+            int imgWidth = sourceImg.getWidth();
+            int imgHeight = sourceImg.getHeight();
+            for (int i = 0; i < Math.ceil(imgHeight * 1.0 / 1920); i++) {
+                Thumbnails.of(sourceImg)
+                        .sourceRegion(0, i * 1920, imgWidth, 1920)
+                        .width(750)
+                        .toFile(path + "/" + fileName + "_" + new DecimalFormat("00").format(i) + ".jpg");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
