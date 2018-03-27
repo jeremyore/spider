@@ -57,7 +57,7 @@ public class App {
 
     public static void saveAllPagesItems() {
         List<String[]> arrayList = new ArrayList<>();
-        arrayList.add(new String[]{"https://shop232514415.taobao.com", "/home/wangjing/Downloads/商品数据/欧若拉1/", "1", "/search.htm"});
+        arrayList.add(new String[]{"https://shop227550426.taobao.com/", "/home/wangjing/Downloads/商品数据/eche/", "2", "/search.htm"});
 
         for (String[] strArr : arrayList) {
             SpiderUtils.saveAllPagesItems(strArr[0], strArr[1], Integer.parseInt(strArr[2]), strArr[3]);

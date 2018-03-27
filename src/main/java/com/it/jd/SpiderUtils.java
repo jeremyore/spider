@@ -87,7 +87,7 @@ public class SpiderUtils {
         Elements titleImgEles = curDoc.select("#spec-list > ul > li > img");
         for (Element element : titleImgEles) {
             //替换成大图
-            String imgUrl = "https:" + element.attr("src").replace("n5", "n1");
+            String imgUrl = "https:" + element.attr("src").replace("n5", "imgzone");
             imgsURL.add(imgUrl);
         }
         return imgsURL;

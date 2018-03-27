@@ -10,7 +10,7 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/商品列表/歌浪香品/";
+        String path = "/home/wangjing/Downloads/商品列表/歌浪香品2/";
 
         List<String> urlList = new ArrayList<>();
 
@@ -18,14 +18,23 @@ public class App {
         urlList.add("https://item.jd.com/18847961807.html");
         urlList.add("https://item.jd.com/18815253605.html");
 
-        urlList.add("https://item.jd.com/18814027441.html");
+        urlList.add("https://item.jd.com/19489037465.html");
+        urlList.add("https://item.jd.com/19489037466.html");
+        urlList.add("https://item.jd.com/19489037467.html");
+        urlList.add("https://item.jd.com/19489037468.html");
+        urlList.add("https://item.jd.com/19489037469.html");
+        urlList.add("https://item.jd.com/19489037470.html");
+        urlList.add("https://item.jd.com/19489037471.html");
+        urlList.add("https://item.jd.com/19489037472.html");
+
+/*        urlList.add("https://item.jd.com/18814027441.html");
         urlList.add("https://item.jd.com/18913180555.html");
         urlList.add("https://item.jd.com/18913947332.html");
         urlList.add("https://item.jd.com/18897887801.html");
         urlList.add("https://item.jd.com/18912228390.html");
         urlList.add("https://item.jd.com/18914363353.html");
         urlList.add("https://item.jd.com/18845073203.html");
-        urlList.add("https://item.jd.com/24151153343.html");
+        urlList.add("https://item.jd.com/24151153343.html");*/
 
         for (String url : urlList) {
             SpiderUtils.saveDetailItems(url, path);

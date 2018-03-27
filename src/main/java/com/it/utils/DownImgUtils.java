@@ -162,7 +162,8 @@ public class DownImgUtils {
     public static void saveJDTitleImg(String imgUrl, String path, String fileName) {
         try {
             Thumbnails.of(new URL(imgUrl))
-                    .size(400,400)
+                    //.size(400,400)
+                    .size(800,800)
                     .toFile(path+"/"+fileName+".jpg");
         } catch (Exception e) {
             e.printStackTrace();
