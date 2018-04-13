@@ -10,22 +10,24 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/商品列表/歌浪香品2/";
+        String path = "/home/wangjing/Downloads/商品列表/易图/";
 
         List<String> urlList = new ArrayList<>();
 
-        urlList.add("https://item.jd.com/18848075603.html");
-        urlList.add("https://item.jd.com/18847961807.html");
-        urlList.add("https://item.jd.com/18815253605.html");
+//        urlList.add("https://item.jd.com/18848075603.html");
+//        urlList.add("https://item.jd.com/18847961807.html");
+//        urlList.add("https://item.jd.com/18815253605.html");
+//
+//        urlList.add("https://item.jd.com/19489037465.html");
+//        urlList.add("https://item.jd.com/19489037466.html");
+//        urlList.add("https://item.jd.com/19489037467.html");
+//        urlList.add("https://item.jd.com/19489037468.html");
+//        urlList.add("https://item.jd.com/19489037469.html");
+//        urlList.add("https://item.jd.com/19489037470.html");
+//        urlList.add("https://item.jd.com/19489037471.html");
+//        urlList.add("https://item.jd.com/19489037472.html");
 
-        urlList.add("https://item.jd.com/19489037465.html");
-        urlList.add("https://item.jd.com/19489037466.html");
-        urlList.add("https://item.jd.com/19489037467.html");
-        urlList.add("https://item.jd.com/19489037468.html");
-        urlList.add("https://item.jd.com/19489037469.html");
-        urlList.add("https://item.jd.com/19489037470.html");
-        urlList.add("https://item.jd.com/19489037471.html");
-        urlList.add("https://item.jd.com/19489037472.html");
+        urlList.add("https://item.jd.com/26805699918.html");
 
 /*        urlList.add("https://item.jd.com/18814027441.html");
         urlList.add("https://item.jd.com/18913180555.html");

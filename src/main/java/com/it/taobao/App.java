@@ -6,13 +6,13 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-//        save_1_Item();
-        saveAllPagesItems();
+        save_1_Item();
+//        saveAllPagesItems();
 
     }
 
     public static void save_1_Item() {
-        String path = "D:/商品数据/";
+        String path = "/home/wangjing/Downloads/e车e拍/";
 
         List<String> urlList = new ArrayList<>();
 /*        urlList.add("https://item.taobao.com/item.htm?ft=t&spm=a21m2.8958473.0.0.a053ed6CBC8T3&id=543678690807");
@@ -48,7 +48,7 @@ public class App {
 
 //        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.1.65c637e4Pthh9I&id=556013106233&ns=1&abbucket=7#detail");
 
-        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.26.65c637e4Pthh9I&id=559923986106&ns=1&abbucket=7#detail");
+        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.16.1e606dfdurWEhd&id=563188590902&ns=1&abbucket=3#detail");
 
         for (String url : urlList) {
             SpiderUtils.saveDetailItems(url, path);

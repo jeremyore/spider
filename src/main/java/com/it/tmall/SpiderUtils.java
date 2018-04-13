@@ -90,7 +90,7 @@ public class SpiderUtils {
             Matcher m = p.matcher(backgroundUrl);
             if (m.find()) {
                 String colorImgURL = "https:" + m.group(1);
-                colorImgURL = colorImgURL.replace("40x40", "430x430");
+                colorImgURL = colorImgURL.replace("_40x40q90.jpg", "");
                 DownImgUtils.saveImg(colorImgURL, path, colorName + ".jpg");
             }
         }
@@ -103,7 +103,7 @@ public class SpiderUtils {
         Elements titleImgEles = curDoc.select("#J_UlThumb > li> a > img");
         for (Element element : titleImgEles) {
             //替换成大图
-            String imgUrl = "https:" + element.attr("src").replace("60x60", "430x430");
+            String imgUrl = "https:" + element.attr("src").replace("_60x60q90.jpg", "");
             imgsURL.add(imgUrl);
         }
         return imgsURL;

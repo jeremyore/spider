@@ -11,8 +11,8 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String url = "https://detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-14944792624.50.4aa04024hpz2SP&id=26286604315&rn=c23a72982b0f553a3adaad817317f920&abbucket=14";
-        String path = "D:\\商品数据\\";
+        String url = "https://detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-3003080884.52.28c85579sSmm8m&id=523269750698&rn=d460885351a8108345a1ff6a911b46be&abbucket=5&skuId=3553189652605";
+        String path = "/home/wangjing/Downloads/雷朋/";
         SpiderUtils.saveDetailItems(url, path);
     }
 

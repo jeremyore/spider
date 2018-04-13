@@ -244,4 +244,51 @@ public class DownImgUtils {
             e.printStackTrace();
         }
     }
+
+    //==========================================================
+    //alibaba
+    public static void saveAlibabaTitleImgList(List<String> imgsUrl, String path, String fileName) {
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveAlibabaTitleImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            System.out.println(imgUrl);
+        }
+    }
+
+    public static void saveAlibabaTitleImg(String imgUrl, String path, String fileName) {
+        try {
+            Thumbnails.of(new URL(imgUrl))
+                    //.size(400,400)
+                    .size(800,800)
+                    .toFile(path+"/"+fileName+".jpg");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void saveAlibabaDescImgList(List<String> imgsUrl, String path, String fileName) {
+        int index = 0;
+        for (String imgUrl : imgsUrl) {
+            index += 1;
+            saveAlibabaImg(imgUrl, path, fileName + "_" + new DecimalFormat("00").format(index));
+            System.out.println(imgUrl);
+        }
+    }
+
+    public static void saveAlibabaImg(String imgUrl, String path, String fileName) {
+        try {
+            BufferedImage sourceImg = ImageIO.read(new URL(imgUrl));
+            int imgWidth = sourceImg.getWidth();
+            int imgHeight = sourceImg.getHeight();
+            for (int i = 0; i < Math.ceil(imgHeight * 1.0 / 1920); i++) {
+                Thumbnails.of(sourceImg)
+                        .sourceRegion(0, i * 1920, imgWidth, 1920)
+                        .scale(1.0)
+                        .toFile(path + "/" + fileName + "_" + new DecimalFormat("00").format(i) + ".jpg");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
