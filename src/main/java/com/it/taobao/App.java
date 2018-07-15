@@ -12,7 +12,7 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/e车e拍/";
+        String path = "D:/产品图片/秋名山/";
 
         List<String> urlList = new ArrayList<>();
 /*        urlList.add("https://item.taobao.com/item.htm?ft=t&spm=a21m2.8958473.0.0.a053ed6CBC8T3&id=543678690807");
@@ -48,7 +48,7 @@ public class App {
 
 //        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.1.65c637e4Pthh9I&id=556013106233&ns=1&abbucket=7#detail");
 
-        urlList.add("https://item.taobao.com/item.htm?spm=a230r.1.14.16.1e606dfdurWEhd&id=563188590902&ns=1&abbucket=3#detail");
+        urlList.add("https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-17551647714.75.16ab7560hTCEEM&id=569601676195");
 
         for (String url : urlList) {
             SpiderUtils.saveDetailItems(url, path);
@@ -57,7 +57,7 @@ public class App {
 
     public static void saveAllPagesItems() {
         List<String[]> arrayList = new ArrayList<>();
-        arrayList.add(new String[]{"https://shop227550426.taobao.com/", "/home/wangjing/Downloads/商品数据/eche/", "2", "/search.htm"});
+        arrayList.add(new String[]{"https://shop348304872.taobao.com/", "D:/产品图片/秋名山/", "1", "/search.htm"});
 
         for (String[] strArr : arrayList) {
             SpiderUtils.saveAllPagesItems(strArr[0], strArr[1], Integer.parseInt(strArr[2]), strArr[3]);

@@ -11,8 +11,8 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String url = "https://detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-3003080884.52.28c85579sSmm8m&id=523269750698&rn=d460885351a8108345a1ff6a911b46be&abbucket=5&skuId=3553189652605";
-        String path = "/home/wangjing/Downloads/雷朋/";
+        String url = "https://detail.tmall.com/item.htm?spm=a1z10.5-b-s.w4011-16202868421.72.c5733e59XfhDIN&id=40712770433&rn=72c24bdec6ff613d2eca8a5aabdc5feb&abbucket=14&skuId=61115830823";
+        String path = "D:\\商品数据\\";
         SpiderUtils.saveDetailItems(url, path);
     }
 
@@ -37,7 +37,7 @@ public class App {
 //        arrayList.add(new String[]{"https://hulianyidong.tmall.com", "/home/wangjing/Downloads/商品数据/音响导航/互联移动/", "1", "/category.htm"});
 
 //        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/五福金牛/脚垫/", "1", "/category-804274908.htm"});
-        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/五福金牛/坐垫/", "1", "/category-804275980.htm"});
+        arrayList.add(new String[]{"https://autodoc.tmall.com", "D:/商品数据/车博士", "1", "/search.htm"});
 //        arrayList.add(new String[]{"https://wfjn.tmall.com", "D:/商品数据/五福金牛/尾箱垫/", "1", "/category-804275982.htm"});
 
 

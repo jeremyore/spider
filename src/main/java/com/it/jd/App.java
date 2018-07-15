@@ -10,7 +10,7 @@ public class App {
     }
 
     public static void save_1_Item() {
-        String path = "/home/wangjing/Downloads/商品列表/易图/";
+        String path = "D:\\车博士\\";
 
         List<String> urlList = new ArrayList<>();
 
@@ -27,7 +27,7 @@ public class App {
 //        urlList.add("https://item.jd.com/19489037471.html");
 //        urlList.add("https://item.jd.com/19489037472.html");
 
-        urlList.add("https://item.jd.com/26805699918.html");
+
 
 /*        urlList.add("https://item.jd.com/18814027441.html");
         urlList.add("https://item.jd.com/18913180555.html");
@@ -37,6 +37,14 @@ public class App {
         urlList.add("https://item.jd.com/18914363353.html");
         urlList.add("https://item.jd.com/18845073203.html");
         urlList.add("https://item.jd.com/24151153343.html");*/
+
+        urlList.add("https://item.jd.com/10095170276.html  ");
+        urlList.add("https://item.jd.com/11715601422.html  ");
+        urlList.add("https://item.jd.com/1496468876.html   ");
+        urlList.add("https://item.jd.com/11715747909.html  ");
+        urlList.add("https://item.jd.com/11715687657.html  ");
+        urlList.add("https://item.jd.com/1496015978.html   ");
+
 
         for (String url : urlList) {
             SpiderUtils.saveDetailItems(url, path);
